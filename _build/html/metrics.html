@@ -1,0 +1,222 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>BlobMetrics &#8212; bloby 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="IngestTifStack" href="ingest.html" />
+    <link rel="prev" title="BlobDetector" href="detector.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="ingest.html" title="IngestTifStack"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="detector.html" title="BlobDetector"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">bloby 0.1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-src.BlobMetrics">
+<span id="blobmetrics"></span><h1>BlobMetrics<a class="headerlink" href="#module-src.BlobMetrics" title="Permalink to this headline">¶</a></h1>
+<p>This class is used for quantitative evaluation of detected results</p>
+<dl class="class">
+<dt id="src.BlobMetrics.BlobMetrics">
+<em class="property">class </em><code class="descclassname">src.BlobMetrics.</code><code class="descname">BlobMetrics</code><span class="sig-paren">(</span><em>ground_truth_coords</em>, <em>predicted_coords</em>, <em>euclidean_distance_threshold=0</em><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>BlobMetrics class can be instantiated with the following args</p>
+<ul class="simple">
+<li><strong>parameters</strong>, <strong>types</strong>, <strong>return</strong> and <strong>return types</strong>:</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ground_truth_coords</strong> (<em>list</em><em> [</em><em>z</em><em>,</em><em>y</em><em>,</em><em>x</em><em>]</em>) – full path to the CSV file having annotations</li>
+<li><strong>predicted_coords</strong> (<em>list</em><em> [</em><em>z</em><em>,</em><em>y</em><em>,</em><em>x</em><em>]</em>) – full path to the CSV file having the predictions</li>
+<li><strong>euclidean_distance_threshold</strong> (<em>integer</em>) – (optional) euclidean distance in voxels, within which a ground truth and prediction are considered as a hit</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.accuracy">
+<code class="descname">accuracy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.accuracy" title="Permalink to this definition">¶</a></dt>
+<dd><p>True positives / Number of ground truth labels</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.f_measure">
+<code class="descname">f_measure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.f_measure" title="Permalink to this definition">¶</a></dt>
+<dd><p>(2 x precision x recall)/(precision + recall)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.g_measure">
+<code class="descname">g_measure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.g_measure" title="Permalink to this definition">¶</a></dt>
+<dd><p>sqrt(precision x recall)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.get_region_based_count">
+<code class="descname">get_region_based_count</code><span class="sig-paren">(</span><em>ontology_file</em>, <em>registered_brain_tif</em><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.get_region_based_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a region ontology file and a registered annotated brain, this method returns the number of predicted cells in each region</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.mean_square_error">
+<code class="descname">mean_square_error</code><span class="sig-paren">(</span><em>edist=None</em><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.mean_square_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sum of euclidean distances between predicted and ground truth labels</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.plot_accuracy_sensitivity">
+<code class="descname">plot_accuracy_sensitivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.plot_accuracy_sensitivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots change of accuracy with euclidean_distance_threshold</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.plot_fmeasure_sensitivity">
+<code class="descname">plot_fmeasure_sensitivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.plot_fmeasure_sensitivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots change of F-Measure with euclidean_distance_threshold</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.plot_ground_truths_per_prediction">
+<code class="descname">plot_ground_truths_per_prediction</code><span class="sig-paren">(</span><em>fname=None</em><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.plot_ground_truths_per_prediction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots a bar graph of number of ground truth labels for each prediction</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.plot_intensity_mapping">
+<code class="descname">plot_intensity_mapping</code><span class="sig-paren">(</span><em>region_intensities</em>, <em>reg_atlas_tif</em>, <em>id2name</em>, <em>fig_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.plot_intensity_mapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots intensity sum of each region</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.plot_mean_square_error_sensitivity">
+<code class="descname">plot_mean_square_error_sensitivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.plot_mean_square_error_sensitivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots change of mean square error with euclidean_distance_threshold</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.plot_predictions_per_ground_truth">
+<code class="descname">plot_predictions_per_ground_truth</code><span class="sig-paren">(</span><em>fname=None</em><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.plot_predictions_per_ground_truth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots a bar graph of number of predictions for each ground truth</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.plot_predictions_with_ground_truth">
+<code class="descname">plot_predictions_with_ground_truth</code><span class="sig-paren">(</span><em>fname=None</em><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.plot_predictions_with_ground_truth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots a visualization of predictions with ground truth labels</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.plot_region_based_count">
+<code class="descname">plot_region_based_count</code><span class="sig-paren">(</span><em>count_statistics=None</em>, <em>fig_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.plot_region_based_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots a number of cells in each region</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.precision">
+<code class="descname">precision</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.precision" title="Permalink to this definition">¶</a></dt>
+<dd><p>True positives / true positives + false positives</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobMetrics.BlobMetrics.recall">
+<code class="descname">recall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobMetrics.BlobMetrics.recall" title="Permalink to this definition">¶</a></dt>
+<dd><p>True positives / true positives + false negatives</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="detector.html"
+                        title="previous chapter">BlobDetector</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ingest.html"
+                        title="next chapter">IngestTifStack</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="ingest.html" title="IngestTifStack"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="detector.html" title="BlobDetector"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">bloby 0.1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, COBALT.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>

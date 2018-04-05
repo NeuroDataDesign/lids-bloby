@@ -1,0 +1,12 @@
+colorama==0.3.9
+scikit_image==0.13.1
+scipy==1.0.0
+numpy==1.13.1
+requests==2.18.4
+intern==0.9.4
+tifffile==0.12.1
+tqdm==4.19.5
+matplotlib==2.1.0
+progressbar2==3.34.3
+scikit_learn==0.19.1
+pyfiglet==0.7.5

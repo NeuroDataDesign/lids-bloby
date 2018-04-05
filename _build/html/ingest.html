@@ -1,0 +1,152 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>IngestTifStack &#8212; bloby 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="util" href="util.html" />
+    <link rel="prev" title="BlobMetrics" href="metrics.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="util.html" title="util"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="metrics.html" title="BlobMetrics"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">bloby 0.1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-src.IngestTifStack">
+<span id="ingesttifstack"></span><h1>IngestTifStack<a class="headerlink" href="#module-src.IngestTifStack" title="Permalink to this headline">¶</a></h1>
+<p>This class is used to upload results to BOSS</p>
+<dl class="class">
+<dt id="src.IngestTifStack.ConfigParams">
+<em class="property">class </em><code class="descclassname">src.IngestTifStack.</code><code class="descname">ConfigParams</code><span class="sig-paren">(</span><em>param_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IngestTifStack.ConfigParams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>ConfigParams class can be instantiated with a <em>param_dict</em> which has the following attirutes</p>
+<p>collection - BOSS collection name</p>
+<p>experiment - BOSS experiment name</p>
+<p>channel - Name of the new channel to be created</p>
+<p>tif_stack - path to the labelled TIF image</p>
+<p>type - annotation/raw_image</p>
+<p>new_channel - whether a new channel has to be created or not</p>
+<p>source_channel - if type is <em>annotation</em>, the source channel</p>
+<p>config - path to intern.cfg file</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="src.IngestTifStack.IngestTifStack">
+<em class="property">class </em><code class="descclassname">src.IngestTifStack.</code><code class="descname">IngestTifStack</code><span class="sig-paren">(</span><em>ingest_args</em>, <em>verbose=0</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IngestTifStack.IngestTifStack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>IngestTifStack class can be instantiated with the following args</p>
+<ul class="simple">
+<li><strong>parameters</strong>, <strong>types</strong>, <strong>return</strong> and <strong>return types</strong>:</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ingest_args</strong> (<a class="reference internal" href="#src.IngestTifStack.ConfigParams" title="src.IngestTifStack.ConfigParams"><em>ConfigParams</em></a>) – Object of ConfigParams</li>
+<li><strong>verbose</strong> (<em>integer</em>) – (optional) to print debug messages</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="src.IngestTifStack.IngestTifStack.start_upload">
+<code class="descname">start_upload</code><span class="sig-paren">(</span><em>group_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#src.IngestTifStack.IngestTifStack.start_upload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Based on the ingest arguments, uploads the labelled TIF stack to BOSS. <em>group_name</em> is an optional parameter to grant access to the newly created channel for a particular group</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="metrics.html"
+                        title="previous chapter">BlobMetrics</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="util.html"
+                        title="next chapter">util</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="util.html" title="util"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="metrics.html" title="BlobMetrics"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">bloby 0.1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, COBALT.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>

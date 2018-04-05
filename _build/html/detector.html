@@ -1,0 +1,143 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>BlobDetector &#8212; bloby 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="BlobMetrics" href="metrics.html" />
+    <link rel="prev" title="Welcome to bloby’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="metrics.html" title="BlobMetrics"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to bloby’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">bloby 0.1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-src.BlobDetector">
+<span id="blobdetector"></span><h1>BlobDetector<a class="headerlink" href="#module-src.BlobDetector" title="Permalink to this headline">¶</a></h1>
+<p>This class is the core detector for this package</p>
+<dl class="class">
+<dt id="src.BlobDetector.BlobDetector">
+<em class="property">class </em><code class="descclassname">src.BlobDetector.</code><code class="descname">BlobDetector</code><span class="sig-paren">(</span><em>tif_img_path</em>, <em>n_components=3</em><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobDetector.BlobDetector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>BlobDetector class can be instantiated with the following args</p>
+<ul class="simple">
+<li><strong>parameters</strong>, <strong>types</strong>, <strong>return</strong> and <strong>return types</strong>:</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>tif_img_path</strong> (<em>string</em>) – full path of the input TIF stack</li>
+<li><strong>n_components</strong> (<em>integer</em>) – number of intensity clusters in the image (this will be automatically detected in future versions)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="src.BlobDetector.BlobDetector.get_avg_intensity_by_region">
+<code class="descname">get_avg_intensity_by_region</code><span class="sig-paren">(</span><em>reg_atlas_path</em><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobDetector.BlobDetector.get_avg_intensity_by_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given registered atlas image path, gives the average intensity of the regions</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.BlobDetector.BlobDetector.get_blob_centroids">
+<code class="descname">get_blob_centroids</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.BlobDetector.BlobDetector.get_blob_centroids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the blob centroids based on GMM thresholding, erosion and connected components</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to bloby’s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="metrics.html"
+                        title="next chapter">BlobMetrics</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="metrics.html" title="BlobMetrics"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to bloby’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">bloby 0.1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, COBALT.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>

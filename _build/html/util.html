@@ -1,0 +1,123 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>util &#8212; bloby 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="IngestTifStack" href="ingest.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="ingest.html" title="IngestTifStack"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">bloby 0.1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-src.util">
+<span id="util"></span><h1>util<a class="headerlink" href="#module-src.util" title="Permalink to this headline">¶</a></h1>
+<p>Utility functions</p>
+<dl class="function">
+<dt id="src.util.create_intern_config">
+<code class="descclassname">src.util.</code><code class="descname">create_intern_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.util.create_intern_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates intern.cfg file from BOSS_TOKEN environment variable</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.util.get_list_from_csv">
+<code class="descclassname">src.util.</code><code class="descname">get_list_from_csv</code><span class="sig-paren">(</span><em>csv_file_path</em>, <em>parse_float=True</em>, <em>skip_header=False</em><span class="sig-paren">)</span><a class="headerlink" href="#src.util.get_list_from_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a CSV file, converts it to list</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.util.plot_csv_on_tif">
+<code class="descclassname">src.util.</code><code class="descname">plot_csv_on_tif</code><span class="sig-paren">(</span><em>centroids</em>, <em>reference_img_path</em>, <em>tif_output_path</em><span class="sig-paren">)</span><a class="headerlink" href="#src.util.plot_csv_on_tif" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a CSV file, plots the co-ordinates in the CSV on a TIF stack</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.util.write_list_to_csv">
+<code class="descclassname">src.util.</code><code class="descname">write_list_to_csv</code><span class="sig-paren">(</span><em>arr</em>, <em>csv_output_path</em><span class="sig-paren">)</span><a class="headerlink" href="#src.util.write_list_to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list, writes it to a CSV file</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ingest.html"
+                        title="previous chapter">IngestTifStack</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="ingest.html" title="IngestTifStack"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">bloby 0.1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, COBALT.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>
